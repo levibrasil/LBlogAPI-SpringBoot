@@ -1,4 +1,4 @@
-package com.lblog.lblogapi.controller;
+package com.lblog.lblogapi.api.controller;
 
 import com.lblog.lblogapi.domain.model.Cliente;
 import com.lblog.lblogapi.domain.repository.ClienteRepository;
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 @AllArgsConstructor
 @RestController
