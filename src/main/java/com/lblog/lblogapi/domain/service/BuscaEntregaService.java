@@ -1,6 +1,6 @@
 package com.lblog.lblogapi.domain.service;
 
-import com.lblog.lblogapi.domain.exception.NegocioException;
+import com.lblog.lblogapi.domain.exception.EntidadeNaoEncontradaException;
 import com.lblog.lblogapi.domain.model.Entrega;
 import com.lblog.lblogapi.domain.repository.EntregaRepository;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ public class BuscaEntregaService {
 
     public Entrega buscar(Long entregaId) {
         return entregaRepository.findById(entregaId)
-                .orElseThrow(() -> new NegocioException("Entrega não encontrada"));
+                .orElseThrow(() -> new EntidadeNaoEncontradaException("Entrega não encontrada"));
     }
 
 }
