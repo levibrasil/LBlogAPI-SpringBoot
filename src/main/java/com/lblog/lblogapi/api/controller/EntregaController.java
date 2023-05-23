@@ -5,6 +5,7 @@ import com.lblog.lblogapi.api.dto.input.EntregaInput;
 import com.lblog.lblogapi.api.assembler.EntregaAssembler;
 import com.lblog.lblogapi.domain.model.Entrega;
 import com.lblog.lblogapi.domain.repository.EntregaRepository;
+import com.lblog.lblogapi.domain.service.FinalizacaoEntregaService;
 import com.lblog.lblogapi.domain.service.SolicitacaoEntregaService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -23,6 +24,8 @@ public class EntregaController {
 
     private SolicitacaoEntregaService solicitacaoEntregaService;
 
+    private FinalizacaoEntregaService finalizacaoEntregaService;
+
     private EntregaAssembler entregaAssembler;
 
     @PostMapping
@@ -33,6 +36,12 @@ public class EntregaController {
         Entrega entregaSolicitada = solicitacaoEntregaService.solicitar(novaEntrega);
 
         return entregaAssembler.toDTO(entregaSolicitada);
+    }
+
+    @PutMapping("/{entregaId}/finalizacao")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void finalizar(@PathVariable Long entregaId) {
+        finalizacaoEntregaService.finalizar(entregaId);
     }
 
     @GetMapping
