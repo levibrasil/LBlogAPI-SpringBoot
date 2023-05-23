@@ -1,9 +1,8 @@
 package com.lblog.lblogapi.api.controller;
 
-import com.lblog.lblogapi.api.dto.DestinatarioDTO;
 import com.lblog.lblogapi.api.dto.EntregaDTO;
 import com.lblog.lblogapi.api.dto.input.EntregaInput;
-import com.lblog.lblogapi.assembler.EntregaAssembler;
+import com.lblog.lblogapi.api.assembler.EntregaAssembler;
 import com.lblog.lblogapi.domain.model.Entrega;
 import com.lblog.lblogapi.domain.repository.EntregaRepository;
 import com.lblog.lblogapi.domain.service.SolicitacaoEntregaService;
