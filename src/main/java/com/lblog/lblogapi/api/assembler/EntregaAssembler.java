@@ -1,4 +1,4 @@
-package com.lblog.lblogapi.assembler;
+package com.lblog.lblogapi.api.assembler;
 
 import com.lblog.lblogapi.api.dto.EntregaDTO;
 import com.lblog.lblogapi.api.dto.input.EntregaInput;
